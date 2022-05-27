@@ -1,0 +1,175 @@
+*{
+    font-family:"Roboto";
+    margin:0 px;
+    padding:0 px;
+}
+
+.CenterBackground{
+    background-color: white;
+    display : flex;
+    flex-direction: column;
+}
+
+.CenterImages {
+    margin-left: auto;
+    margin-right: auto;
+    gap:20px;
+    display: flex;
+}
+
+.Image2 img{
+    border:solid #3882F6 5px;
+    border-radius: 5px;
+    flex: 25%;
+  }
+
+.Image2 p{
+    width:150px;
+    text-align: center; 
+}
+
+.InfoHead{
+    font-size:36px;
+    font-weight:bolder;
+    color:#1f2937;
+    text-align: center;
+    margin: 1ex;
+}
+
+
+nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+footer{
+    background-color: #1F2937;
+    text-align: center;
+    text-decoration: none;
+    font-size:18px;
+    color: #E5E7EB;
+    padding: 5ex;
+}
+
+.Hero{
+    background-color: #1F2937;
+}
+
+
+.HeroDiv{
+    display: flex;
+    gap:100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.HeroMain{
+    color:#F9FAF8;
+    font-size:48px;
+    font-weight:bolder;
+    font-style: bold;
+}
+
+.HeroBox{
+    padding-bottom: 100px;
+    width: 500px;
+}
+
+.SecondaryLink{
+    font-size:18px;
+    color: #E5E7EB;
+}
+
+.Logo{
+    font-size: 24px;
+    font-weight: bold;
+    color:#F9FAF8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Click{
+    color:#3882F6;
+}
+
+.QuoteBack{
+    background-color:#E5E7EB;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.QuoteText{
+    font-size:36px;
+    font-weight:lighter;
+    color:#1f2937;
+    font-style: italic;
+    margin-top:75px;
+}
+
+.QuoteAuthor{
+    font-size:18px;
+    font-weight:bolder;
+    font-style: bold;
+    color:#1f2937;
+    padding-left: 750px;
+    margin-bottom: 75px;
+}
+
+.Image{
+  max-width: 100%;
+  height: auto;
+  
+}
+
+button{
+    background-color: #3882F6;
+    border: 2px solid white;
+    color: white;
+    border-radius: 7px;
+    padding: 5px 1em;    
+    width: 150px;
+    font-size: 15px;
+}
+
+
+.BlueBlock{
+    display : flex;
+    flex-direction: column;
+}
+
+.BlueBlock strong{
+    font-weight: 900;
+    font-size: 18px;
+    margin:40px 0 0 0;
+    font-style: bold;
+    font-weight:bolder;
+    color:white;
+}
+
+.BlueBlock p{
+    margin:0 0 40px 0;
+    color:white;
+}
+
+.BottomBackground{
+    background-color: #3883f6;
+    display: flex;
+    border-radius: 5 px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    width: 75%;
+}
+
+buttonBot{
+    background-color: #3882F6;
+    border: 2px solid white;
+    color: white;
+    border-radius: 7px;
+    padding: 5px 20px 5px 20px;   
+    font-size: 15px;
+}
