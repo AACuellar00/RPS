@@ -50,55 +50,73 @@ function playRound(playerSelection,computerSelection){
 
 let scorePlayer=0;
 let scoreComp=0;
+let roundRes=0;
 
 const buttons = document.querySelectorAll('button');
+const resultH = document.querySelector('#Result');
+
+const playerW = document.querySelector('#playC')
+const computerW = document.querySelector('#compC');
+
+const pPlayerW = document.createElement('p');
+const pComputerW = document.createElement('p');
+const resultPrint= document.createElement('p');
+
+playerW.appendChild(pPlayerW);
+computerW.appendChild(pComputerW);
+resultH.appendChild(resultPrint);
+
+pPlayerW.textContent='0';
+pComputerW.textContent='0';
+
+resultPrint.textContent="First to 5 wins. Click one of the choices below to begin.";
+
+
+function winCheck(scoreP,scoreC){
+    if(scoreP<5 && scoreC<5){
+        return 0;
+    }
+    else if(scorePlayer==5){
+        resultPrint.textContent="Good job, you won! ";
+        resultPrint.style.color="purple";
+        return 1;
+    }
+    else{
+        resultPrint.textContent="Too bad, you lost. ";
+        resultPrint.style.color="purple";
+        return 1;
+    }
+}
 
 buttons.forEach((button) => {
 
   button.addEventListener('click', () => {
       console.log(button.id);
-      playRound(button.id,computerPlay());
+
+      roundRes=playRound(button.id,computerPlay());
+
+      switch(roundRes){
+          case 0:
+              resultPrint.textContent="Tie.";
+              break;
+          case 1:
+              scoreComp++;
+              pComputerW.textContent=`${scoreComp}`;
+              resultPrint.textContent="You lose this round.";
+              winCheck(scorePlayer,scoreComp);
+              break;
+          case 2:
+              scorePlayer++;
+              pPlayerW.textContent=`${scorePlayer}`;
+              resultPrint.textContent="You won this round.";
+              winCheck(scorePlayer,scoreComp);
+              break;
+          default:
+              break;
+      }
+      
+
   });
 });
 
-if(scorePlayer<5 && scoreComp<5){
 
-}
-else if(scorePlayer==5 && scoreComp<5){
-
-}
-
-else{
-    
-}
-
-function game(){
-    let scorePlayer=0;
-    let scoreComp=0;
-
-    while(scorePlayer<5 && scoreComp<5){
-
-        playerSelection = prompt("Please enter Rock, Paper, or Scissor");
-        computerSelection = computerPlay();
-
-        result =playRound(playerSelection, computerSelection);
-
-        switch(result){
-            case -1:
-                console.log(`${playerSelection} is not a valid input`);
-                break;
-            case 0:
-                console.log(`${playerSelection} ties with ${computerSelection}`);
-                break;
-            case 1:
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-                scoreComp++;
-                break;
-            case 2:
-                console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-                scorePlayer++;
-                break;
-        }
-
-    }
-}

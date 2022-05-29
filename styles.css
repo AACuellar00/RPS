@@ -1,5 +1,5 @@
 *{
-    background-color: purple;
+    background-color: grey;
 }
 
 img{
@@ -20,10 +20,38 @@ img{
     padding-bottom: 5em;
 }
 
+.Counter{
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.playC{
+    font-size:36px;
+    color: gold;
+    font-style: bold;
+    padding-left: 400px;
+}
+
+.compC{
+    font-size:36px;
+    color: gold;
+    font-style: bold;
+    padding-right: 400px;
+}
+
 .Body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.Result{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 42px;
 }
 
 button{
