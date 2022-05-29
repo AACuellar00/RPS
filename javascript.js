@@ -47,17 +47,36 @@ function playRound(playerSelection,computerSelection){
     return result;
 }
 
+
+let scorePlayer=0;
+let scoreComp=0;
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+
+  button.addEventListener('click', () => {
+      console.log(button.id);
+      playRound(button.id,computerPlay());
+  });
+});
+
+if(scorePlayer<5 && scoreComp<5){
+
+}
+else if(scorePlayer==5 && scoreComp<5){
+
+}
+
+else{
+    
+}
+
 function game(){
-    let playerSelection;
-    let computerSelection;
-    let result;
-    let scoreTie=0;
     let scorePlayer=0;
     let scoreComp=0;
 
-        console.log("Let's play Rock, Paper, Scissor");
-
-    for(let i =0;i<5;i++){
+    while(scorePlayer<5 && scoreComp<5){
 
         playerSelection = prompt("Please enter Rock, Paper, or Scissor");
         computerSelection = computerPlay();
@@ -70,7 +89,6 @@ function game(){
                 break;
             case 0:
                 console.log(`${playerSelection} ties with ${computerSelection}`);
-                scoreTie++;
                 break;
             case 1:
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
@@ -83,8 +101,4 @@ function game(){
         }
 
     }
-    console.log(`Overall result is ${scoreTie} tie(s), ${scorePlayer} player win(s), and ${scoreComp} computer win(s).`);
 }
-
-
-game();
